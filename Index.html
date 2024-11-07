@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat via WhatsApp</title>
+    <style>
+        /* Pengaturan body dengan latar belakang hijau WhatsApp */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #128C7E, #25D366); /* Gradasi hijau WhatsApp */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Box pesan yang lebih modern */
+        .message-box {
+            background-color: rgba(0, 0, 0, 0.6); /* Transparansi dengan warna gelap */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            font-size: 24px;
+            font-weight: bold;
+            width: 80%;
+            max-width: 600px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Animasi fadeIn untuk kotak pesan */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Logo WhatsApp yang lebih besar dan beranimasi */
+        .whatsapp-logo {
+            width: 120px;
+            margin-top: 20px;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        /* Animasi pulsing pada logo WhatsApp */
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Tombol untuk Chat WhatsApp yang lebih menarik */
+        .button {
+            margin-top: 40px;
+            background-color: #128C7E;
+            padding: 15px 40px;
+            border-radius: 50px;
+            color: white;
+            font-size: 22px;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: buttonAppear 2s forwards;
+        }
+
+        /* Hover effect pada tombol */
+        .button:hover {
+            background-color: #25D366;
+            transform: scale(1.05);
+        }
+
+        /* Animasi untuk tombol muncul */
+        @keyframes buttonAppear {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Countdown timer */
+        .countdown {
+            margin-top: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        /* Animasi countdown */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Kotak pesan dengan countdown -->
+    <div class="message-box">
+        Anda akan diarahkan ke WhatsApp dalam <span class="countdown" id="countdown">5</span> detik...
+    </div>
+
+    <!-- Logo WhatsApp dengan animasi -->
+    <img src="https://www.tanjunglesung.com/wp-content/uploads/2018/12/logo-wa-whatsapp-300x300.png" class="whatsapp-logo" alt="Logo WhatsApp">
+
+    <!-- Tombol Chat via WhatsApp (akan muncul setelah countdown) -->
+    <a href="https://numbirritablemajor.com/bqehbps9m?key=f9f6302ad33a5aae533977de107a5267" class="button" id="whatsappButton" style="display: none;">Chat via WhatsApp</a>
+
+    <script>
+        // Mengatur countdown timer
+        let countdown = 5;
+        let countdownElement = document.getElementById("countdown");
+
+        let timer = setInterval(function() {
+            countdown--;
+            countdownElement.innerText = countdown;
+
+            // Setelah countdown selesai, arahkan ke WhatsApp dan tampilkan tombol
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = "https://numbirritablemajor.com/bqehbps9m?key=f9f6302ad33a5aae533977de107a5267"; // Ganti dengan nomor WhatsApp kamu
+                document.getElementById("whatsappButton").style.display = "inline-block"; // Menampilkan tombol WhatsApp
+            }
+        }, 1000); // Timer setiap 1 detik
+    </script>
+
+</body>
+</html>
